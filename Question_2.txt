@@ -1,0 +1,48 @@
+Input 1:
+Enter the number of ratings: 
+5
+Enter the ratings:
+Rating 1: 5
+Rating 2: 2
+Rating 3: 2
+Rating 4: 4
+Rating 5: 1
+Most frequent rating: 2
+
+_________________________________________________________________________________________
+
+Input 2:
+
+Enter the number of ratings: 0
+Output 2:
+Error: The number of ratings must be greater than 0.
+
+_________________________________________________________________________________________
+
+Input 3:
+
+Enter the number of ratings: 5
+Enter the ratings:
+Rating 1: 1
+Rating 2: 2
+Rating 3: 2
+Rating 4: 3
+Rating 5: 3
+
+Output 3:
+Most frequent rating: 2
+
+
+
+_________________________________________________________________________________________
+
+
+
+Explanation:
+HashMap for Frequency Counting: We use a HashMap to store the frequency of each rating. The key is the rating, and the value is the count of how many times it appears in the array.
+
+Iterate Through the Array: We iterate through the array and update the frequency map.
+
+Find the Most Frequent Rating: After populating the frequency map, we iterate through it to find the rating with the highest frequency.
+
+Edge Cases: The code handles edge cases such as an empty array or multiple ratings with the same highest frequency.
