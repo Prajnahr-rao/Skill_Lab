@@ -1,0 +1,57 @@
+
+Input 1:
+
+Enter the number of days: 5
+Enter sales for day 1: 100
+Enter sales for day 2: 300
+Enter sales for day 3: 500
+Enter sales for day 4: 100
+Enter sales for day 5: 200
+
+Output 1:
+The day with the highest sales is day 3 with sales of 500.
+
+
+_________________________________________________________________________________________
+
+
+Edge Case Examples:
+Invalid Number of Days:
+Enter the number of days: -3
+
+Invalid number of days. Please enter a positive number.
+
+
+_________________________________________________________________________________________
+
+Single Day:
+
+Enter the number of days: 1
+Enter sales for day 1: 500
+
+The day with the highest sales is day 1 with sales of 500.
+
+
+_________________________________________________________________________________________
+
+All Days with Same Sales:
+
+Enter the number of days: 3
+Enter sales for day 1: 100
+Enter sales for day 2: 100
+Enter sales for day 3: 100
+
+The day with the highest sales is day 1 with sales of 100.
+
+
+_________________________________________________________________________________________
+
+
+Explanation:
+Input Handling: The program takes an array of sales data as input. This array represents the sales for each day.
+
+Edge Case Handling: The program checks if the array is empty or null. If it is, the program returns -1 to indicate that no sales data is available.
+
+Finding the Highest Sales Day: The program iterates through the array to find the day with the highest sales. It keeps track of the maximum sales value and the corresponding day index.
+
+Output: The program outputs the day with the highest sales along with the sales amount. If no data is available, it informs the user.
