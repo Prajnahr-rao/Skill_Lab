@@ -1,0 +1,87 @@
+How It Works:
+
+Input:
+The program prompts the user to enter a paragraph.
+The Scanner reads the input using nextLine().
+
+Processing:
+
+The input paragraph is split into words using split("\\s+"), which handles spaces, tabs, and other whitespace characters.
+Each word is cleaned by removing non-alphabetic characters (like punctuation) and converted to lowercase.
+The cleaned words are counted and stored in a HashMap.
+
+Output:
+
+The program prints the word counts in the format {word=count, word=count}.
+
+
+Explanation:
+The given input is: "the cat and the hat"
+Splitting it into words: ["the", "cat", "and", "the", "hat"]
+Counting occurrences:
+"the" appears 2 times
+"cat" appears 1 time
+"and" appears 1 time
+"hat" appears 1 time
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -  -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - -  -- - - - - -
+
+
+Explanation:
+
+Set for Unique Characters:
+A HashSet is used to store characters that have already been encountered. Since sets only allow unique elements, duplicates are automatically ignored.
+
+StringBuilder for Result:
+A StringBuilder is used to efficiently build the result string by appending characters that are not duplicates.
+
+Iteration:
+The program iterates through each character of the input string using toCharArray().
+If the character is not already in the set (uniqueChars.add(c) returns true), it is added to both the set and the StringBuilder.
+
+Output:
+
+The StringBuilder is converted to a string using toString() and returned.
+
+The user enters the string "banana".
+
+Initialization:
+
+A HashSet named uniqueChars is created to store unique characters.
+
+A StringBuilder named result is created to build the final string without duplicates.
+
+Iteration Through Characters:
+
+The program iterates through each character of the input string "banana":
+
+Characters: 'b', 'a', 'n', 'a', 'n', 'a'.
+
+Checking for Duplicates:
+
+For each character, the program checks if it is already in the uniqueChars set:
+
+'b': Not in the set → added to uniqueChars and appended to result.
+
+'a': Not in the set → added to uniqueChars and appended to result.
+
+'n': Not in the set → added to uniqueChars and appended to result.
+
+'a': Already in the set → skipped.
+
+'n': Already in the set → skipped.
+
+'a': Already in the set → skipped.
+
+Result Construction:
+
+The result StringBuilder now contains the characters 'b', 'a', and 'n' in order.
+
+Final Output:
+
+The result StringBuilder is converted to a string, resulting in "ban".
+
+Output:
+Copy
+Input: banana
+Output: ban
