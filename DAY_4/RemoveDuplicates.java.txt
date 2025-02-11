@@ -1,0 +1,44 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class RemoveDuplicates {
+
+    public static String removeDuplicateCharacters(String input) {
+        // Create a set to store unique characters
+        Set<Character> uniqueChars = new HashSet<>();
+
+        // Create a StringBuilder to build the result string
+        StringBuilder result = new StringBuilder();
+
+        // Iterate through each character in the input string
+        for (char c : input.toCharArray()) {
+            // If the character is not already in the set, add it to the set and the result
+            if (uniqueChars.add(c)) {
+                result.append(c);
+            }
+        }
+
+        // Convert the StringBuilder to a string and return it
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a string
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        // Close the scanner to avoid resource leak
+        scanner.close();
+
+        // Call the function to remove duplicates
+        String output = removeDuplicateCharacters(input);
+
+        // Print the result
+        System.out.println("Input: " + input);
+        System.out.println("Output: " + output);
+    }
+}
