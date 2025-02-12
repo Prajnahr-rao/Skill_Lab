@@ -85,3 +85,194 @@ Output:
 
 Copy
 The 2-th closest reading is: 74
+- - -- -- - -- ------- -- -----------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+Question 3
+
+1. Design a MinStack
+Problem Explanation:
+We need to design a stack that supports push, pop, top, and getMin operations, all in constant time (O(1)). The challenge is to retrieve the minimum element in constant time, which is not straightforward with a standard stack.
+
+Approach:
+Use two stacks:
+
+One stack (stack) to store the actual elements.
+
+Another stack (minStack) to store the minimum elements at each step.
+
+When pushing a value, compare it with the current minimum (top of minStack). If it's smaller or equal, push it onto minStack.
+
+When popping a value, if the popped value is equal to the top of minStack, pop from minStack as well.
+
+getMin simply returns the top of minStack.
+
+Operations and Explanation:
+MinStack():
+
+Initializes an empty stack.
+
+State: stack = [], minStack = []
+
+Output: null (no output for initialization).
+
+push(-2):
+
+Pushes -2 onto the stack.
+
+Since minStack is empty, -2 is also pushed onto minStack.
+
+State: stack = [-2], minStack = [-2]
+
+Output: null (no output for push operation).
+
+push(0):
+
+Pushes 0 onto the stack.
+
+0 is not smaller than the current minimum (-2), so it is not pushed onto minStack.
+
+State: stack = [-2, 0], minStack = [-2]
+
+Output: null (no output for push operation).
+
+push(-3):
+
+Pushes -3 onto the stack.
+
+-3 is smaller than the current minimum (-2), so it is pushed onto minStack.
+
+State: stack = [-2, 0, -3], minStack = [-2, -3]
+
+Output: null (no output for push operation).
+
+getMin():
+
+Retrieves the minimum element from minStack.
+
+The top of minStack is -3.
+
+Output: -3.
+
+pop():
+
+Removes the top element from the stack (-3).
+
+Since -3 is equal to the top of minStack, it is also popped from minStack.
+
+State: stack = [-2, 0], minStack = [-2]
+
+Output: null (no output for pop operation).
+
+top():
+
+Retrieves the top element of the stack.
+
+The top of the stack is 0.
+
+Output: 0.
+
+getMin():
+
+Retrieves the minimum element from minStack.
+
+The top of minStack is -2.
+
+Output: -2.
+
+Final Output:
+Copy
+null
+null
+null
+null
+-3
+null
+0
+-2
+
+------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------
+
+Question 4
+
+2. Reverse a Singly Linked List
+Problem Explanation:
+Given the head of a singly linked list, reverse the list and return the new head. This is a classic problem that can be solved using iterative or recursive approaches.
+
+Approach:
+Iterative Approach:
+
+Use three pointers: prev, curr, and next.
+
+Traverse the list, reversing the direction of the next pointers.
+
+Update prev and curr until the entire list is reversed.
+
+Execution Steps:
+Initial State:
+
+Copy
+prev = null
+curr = 1 -> 2 -> 3 -> 4 -> 5 -> null
+After First Iteration:
+
+next = 2 (store the next node of curr).
+
+Reverse the direction: 1 -> null.
+
+Update pointers:
+
+Copy
+prev = 1 -> null
+curr = 2 -> 3 -> 4 -> 5 -> null
+After Second Iteration:
+
+next = 3.
+
+Reverse the direction: 2 -> 1 -> null.
+
+Update pointers:
+
+Copy
+prev = 2 -> 1 -> null
+curr = 3 -> 4 -> 5 -> null
+After Third Iteration:
+
+next = 4.
+
+Reverse the direction: 3 -> 2 -> 1 -> null.
+
+Update pointers:
+
+Copy
+prev = 3 -> 2 -> 1 -> null
+curr = 4 -> 5 -> null
+After Fourth Iteration:
+
+next = 5.
+
+Reverse the direction: 4 -> 3 -> 2 -> 1 -> null.
+
+Update pointers:
+
+Copy
+prev = 4 -> 3 -> 2 -> 1 -> null
+curr = 5 -> null
+After Fifth Iteration:
+
+next = null.
+
+Reverse the direction: 5 -> 4 -> 3 -> 2 -> 1 -> null.
+
+Update pointers:
+
+Copy
+prev = 5 -> 4 -> 3 -> 2 -> 1 -> null
+curr = null
+Termination:
+
+The loop ends because curr is now null.
+
+prev points to the new head of the reversed list: 5 -> 4 -> 3 -> 2 -> 1 -> null.
+
+
+
