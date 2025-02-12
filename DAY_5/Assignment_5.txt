@@ -1,0 +1,87 @@
+Question 1
+
+Minimum Coin Change Problem
+Input:
+coins = [1, 2, 5]
+amount = 11
+
+Output:
+Minimum number of coins required: 3
+
+Explanation:
+Initialization:
+
+Create a dp array of size amount + 1.
+Initialize dp[i] to amount + 1 (a placeholder for "impossible").
+Set dp[0] = 0 (0 coins needed for amount 0).
+
+DP Array Filling:
+
+For each amount i from 1 to amount, update dp[i] using:
+dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+This ensures the minimum number of coins is stored for each amount.
+
+Result:
+If dp[amount] is still amount + 1, return -1 (impossible).
+Otherwise, return dp[amount].
+
+Output Explanation:
+For amount = 11, the minimum coins required are 3.
+Coins used: [5, 5, 1].
+
+Final Output:
+Minimum number of coins required: 3
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Question 2
+
+Approach:
+
+Calculate Distances:
+Compute the absolute difference between each reading and the target value.
+Store these differences along with the original readings.
+
+Quickselect Algorithm:
+
+Use the Quickselect algorithm to find the K-th smallest distance.
+Quickselect is an efficient algorithm to find the K-th smallest element in an unordered list without fully sorting it.
+
+Return the Result:
+Once the K-th smallest distance is found, return the corresponding reading.
+
+
+Explanation:
+Input:
+
+readings = [72, 75, 68, 80, 74]
+
+target = 73
+
+k = 2
+
+Step-by-Step Execution:
+
+Calculate distances:
+
+Copy
+|72 - 73| = 1
+|75 - 73| = 2
+|68 - 73| = 5
+|80 - 73| = 7
+|74 - 73| = 1
+Store distances along with readings:
+
+Copy
+[(72, 1), (75, 2), (68, 5), (80, 7), (74, 1)]
+Use Quickselect to find the 2nd smallest distance:
+
+After partitioning, the sorted distances (by Quickselect) are:
+
+Copy
+[(72, 1), (74, 1), (75, 2), (68, 5), (80, 7)]
+The 2nd smallest distance is 1, corresponding to the reading 74.
+
+Output:
+
+Copy
+The 2-th closest reading is: 74
