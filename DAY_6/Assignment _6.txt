@@ -1,0 +1,60 @@
+Question 1 
+
+What is an Anagram?
+An anagram is a word or phrase formed by rearranging the letters of another word. For example:
+
+"listen" and "silent" are anagrams because both words contain the same letters: l, i, s, t, e, n but in different orders.
+
+Explanation:
+
+Use a HashMap: The key is the sorted version of each string, ensuring that anagrams map to the same key.
+Sorting Strings: Convert each string to a character array, sort it, and then convert it back to a string.
+Storing Groups: If the sorted string is not in the map, create a new list; otherwise, add the string to the existing list.
+Return Values: Convert the map values to a list and return.
+This approach runs in O(NK log K) time, where N is the number of strings and K is the maximum string length. Let me know if you need further clarification! 🚀
+
+
+Output Explanation
+The given input array of strings:
+
+String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+gets processed to group anagrams together.
+
+"eat" → sorted: "aet"
+"tea" → sorted: "aet"
+"tan" → sorted: "ant"
+"ate" → sorted: "aet"
+"nat" → sorted: "ant"
+"bat" → sorted: "abt"
+Grouping by Sorted String Key (HashMap)
+
+"aet" → ["eat", "tea", "ate"]
+"ant" → ["tan", "nat"]
+"abt" → ["bat"]
+
+Final Output
+[["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+
+ - - - - --- --- --- ---- - - -  - - - - --- --- --- ---- - - -  - - - - --- --- --- ---- - - -  - - - - --- --- --- ---- - - -  - - - - --- --- --- ---- - - -  - - - - --- --- --- ---- - Question 2
+
+Explanation of the Sliding Window Approach
+Use Two Pointers (left and right):
+
+left tracks the start of the current substring.
+right expands the window to check new characters.
+Use a HashSet to Track Characters:
+
+If s[right] is not in the set, add it and update maxLength.
+If s[right] is a duplicate, remove s[left] and increment left to shrink the window.
+Update Maximum Length (maxLength):
+
+The longest substring is tracked using right - left + 1.
+Time Complexity
+O(N), where N is the length of the string because each character is processed once. 
+
+Final Summary
+"abcabcbb" → 3 ("abc", "bca", or "cab")
+"bbbbb" → 1 ("b")
+"pwwkew" → 3 ("wke" or "kew")
+
