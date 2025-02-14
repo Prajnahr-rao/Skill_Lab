@@ -9,8 +9,8 @@ public class PermutationInString {
         }
 
         // Frequency arrays for s1 and the current window in s2
-        int[] count1 = new int[26];
-        int[] count2 = new int[26];
+        int[] count1 = new int[52];
+        int[] count2 = new int[52];
 
         // Initialize the frequency map for s1
         for (int i = 0; i < len1; i++) {
