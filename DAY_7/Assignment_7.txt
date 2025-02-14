@@ -1,0 +1,73 @@
+Explanation:
+Frequency Arrays: We use two arrays, count1 and count2, to store the frequency of characters in s1 and the current window of s2, respectively.
+
+Sliding Window: We slide the window over s2 by adding the new character to count2 and removing the old character from count2.
+
+Comparison: After each slide, we compare count1 and count2. If they match, it means the current window in s2 is a permutation of s1.
+
+Efficiency: The solution is efficient because it only requires a single pass over s2 and constant space for the frequency arrays.
+
+Example Output:
+For the provided examples:
+
+s1 = "ab", s2 = "eidbaooo" → Output: true
+
+s1 = "ab", s2 = "eidboaoo" → Output: false
+
+This implementation should work efficiently for the given problem.
+- --- --- --- ---- - - -  - - - - --- --- --- - --- --- --- ---- - - -  - - - - --- --- --- - --- --- --- ---- - - -  - - - - --- --- --- - --- --- --- ---- - - -  - - - - --- --- --- 
+
+Explanation:
+Deque Usage: We use a deque (double-ended queue) to store indices of the elements in the current window. The deque helps us efficiently maintain the minimum element in the current window.
+
+Window Maintenance:
+
+We remove indices from the front of the deque that are outside the current window.
+
+We remove indices from the back of the deque if the corresponding elements are greater than the current element. This ensures that the deque always contains indices of elements in increasing order.
+
+Result Collection:
+
+Once the window size reaches k, the minimum element in the window is always at the front of the deque, so we add it to the result list.
+
+Complexity:
+Time Complexity: O(n), where n is the number of elements in the prices array. Each element is pushed and popped from the deque at most once.
+
+Space Complexity: O(k), as the deque can store at most k elements at any time.
+
+This approach efficiently finds the minimum stock price for every rolling k-day window.
+
+Explanation:
+We are sliding a window of size 3 over the stock prices array and finding the minimum value in each window. Here's how the output is calculated:
+
+First Window: [120, 110, 115]
+
+Minimum value in this window: 110
+
+Output so far: [110]
+
+Second Window: [110, 115, 100]
+
+Minimum value in this window: 100
+
+Output so far: [110, 100]
+
+Third Window: [115, 100, 105]
+
+Minimum value in this window: 100
+
+Output so far: [110, 100, 100]
+
+Fourth Window: [100, 105, 98]
+
+Minimum value in this window: 98
+
+Output so far: [110, 100, 100, 98]
+
+Fifth Window: [105, 98, 102]
+
+Minimum value in this window: 98
+
+Final Output: [110, 100, 100, 98, 98]
+
+
