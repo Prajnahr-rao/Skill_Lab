@@ -11,7 +11,6 @@ Enter sales for day 5: 200
 Output 1:
 The day with the highest sales is day 3 with sales of 500.
 
-
 _________________________________________________________________________________________
 
 
