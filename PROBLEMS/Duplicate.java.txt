@@ -1,0 +1,70 @@
+import java.util.HashSet;
+
+public class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        // Create a HashSet to track unique numbers
+        HashSet<Integer> seen = new HashSet<>();
+        
+        // Iterate through the array
+        for (int num : nums) {
+            // If the number is already in the set, we found a duplicate
+            if (seen.contains(num)) {
+                return true;
+            }
+            // Add the current number to the set
+            seen.add(num);
+        }
+        
+        // No duplicates found
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        // Create an instance of the Solution class
+        Solution solution = new Solution();
+        
+        // Example 1: [1,2,3,1]
+        int[] example1 = {1, 2, 3, 1};
+        
+        // Call the containsDuplicate method
+        boolean result = solution.containsDuplicate(example1);
+        
+        // Print the result
+        System.out.println("Input: [1,2,3,1]");
+        System.out.println("Output: " + result);
+        System.out.println("Explanation: The element 1 occurs at indices 0 and 3.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+# Key Points for the "Contains Duplicate" Problem
+
+1. **Problem Goal**: Determine if an array contains any duplicate elements.
+
+2. **Approach**: Use a HashSet to track unique elements while iterating through the array.
+
+3. **Time Complexity**: O(n) where n is the length of the array.
+
+4. **Space Complexity**: O(n) for storing elements in the HashSet.
+
+5. **Algorithm Steps**:
+   - Create a HashSet to store unique elements
+   - Iterate through each element in the array
+   - If the current element is already in the set, return true (duplicate found)
+   - Otherwise, add the element to the set
+   - If we finish iterating without finding duplicates, return false
+
+6. **Key Insight**: HashSet provides O(1) lookup time, making this an efficient solution.
+
+7. **Early Return**: The solution stops as soon as the first duplicate is found.
+
+8. **Edge Cases**: The solution handles all constraints including large arrays (up to 10^5 elements) and the wide range of integer values.

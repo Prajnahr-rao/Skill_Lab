@@ -1,0 +1,18 @@
+1. Find the Single Missing Number
+Problem: Given an array of size n-1 containing numbers from 1 to n (with one number missing), find the missing number.
+Example:
+java
+Copy
+Edit
+Input:  [1, 2, 4, 5]
+Output: 3  (because 3 is missing)
+Solution: Use sum formula (n(n+1)/2) or XOR to find the missing number in O(n) time and O(1) space.
+2. Find All Missing Numbers
+Problem: Given an array of size n containing numbers from 1 to n (with some numbers missing and some repeated), find all missing numbers.
+Example:
+java
+Copy
+Edit
+Input:  [4,3,2,7,8,2,3,1]
+Output: [5,6]  (because 5 and 6 are missing)
+Solution: Use a HashSet or in-place marking to find all missing numbers in O(n) time.
